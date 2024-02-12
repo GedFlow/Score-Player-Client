@@ -66,7 +66,7 @@ export default function Upload({setIsLoading}) {
         type="file" 
         accept="image/*" 
         id="fileInput" 
-        style={{display:"none"}}
+        style={{visibility: "hidden"}}
         onChange={inputEvent}
       />
       {
