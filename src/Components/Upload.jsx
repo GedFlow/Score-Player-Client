@@ -6,7 +6,7 @@ export default function Upload({setIsLoading}) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [music, setMusic] = useState(false);
   const [musicTitle, setMusicTitle] = useState("");
-  const target = process.env.targetHome;
+  const target = process.env.REACT_APP_HOME;
   console.log(target);
 
   const handleButtonClick = () => {
