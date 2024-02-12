@@ -2,8 +2,6 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import Footer from "./Components/Footer";
 import Upload from "./Components/Upload";
-import Loading from "./Components/Loading";
-import Player from "./Components/Player";
 
 let MainDiv = styled.div`
   display: flex;
@@ -13,17 +11,26 @@ let MainDiv = styled.div`
   width: 100%;
   height: 95vh;
 `
+let LoadingDiv = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000b0;
+  color: white;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 function App() {
 
-  const [page, setPage] = useState("Upload");
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <>
+      {isLoading ? <LoadingDiv>로딩중</LoadingDiv> : null}
       <MainDiv>
-        { page === "Upload" ? <Upload setPage={setPage} /> : null }
-        { page === "Loading" ? <Loading setPage={setPage} /> : null }
-        {/* { page === "Player" ? <Player setPage={setPage} /> : null } */}
+        <Upload setIsLoading={setIsLoading} />
       </MainDiv>
       <Footer />
     </>

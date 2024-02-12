@@ -21,6 +21,22 @@ export let UploadDiv = styled.div`
     height: 400px;
   }
 `
+export let PlayerDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 500px;
+  height: 60%;
+  border: 1px solid black;
+  border-radius: 35px;
+
+  @media (max-width: 600px) {
+    width: 70%;
+    height: 400px;
+  }
+`
 
 export let UploadButton = styled.div`
   display: block;
@@ -55,4 +71,8 @@ export let VaticalLine = styled.div`
   left:50%;
   top:50%;
   transform: translate(-50%, -50%);
+`
+
+export let MusicPlayer = styled.audio`
+  
 `
