@@ -6,8 +6,8 @@ export default function Upload({setIsLoading}) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [music, setMusic] = useState(false);
   const [musicTitle, setMusicTitle] = useState("");
-  const target = process.env.REACT_APP_HOME;
-  console.log(target);
+  const HOME = process.env.REACT_APP_HOME;
+  console.log(HOME);
 
   const handleButtonClick = () => {
     document.getElementById("fileInput").click();
@@ -19,7 +19,7 @@ export default function Upload({setIsLoading}) {
   }
 
   useEffect(() => {
-    const response = axios.post(`${target}delete`);
+    const response = axios.post(`${HOME}delete`);
     console.log(response.data);
   }, [])
 
@@ -35,7 +35,7 @@ export default function Upload({setIsLoading}) {
         try {
           // 서버 업로드 엔드포인트에 POST 요청 보내기
           setIsLoading(true);
-          const response = await axios.post(target, formData);
+          const response = await axios.post(HOME, formData);
           setMusicTitle(response.data);
   
           console.log("파일 전송 성공");
@@ -73,7 +73,7 @@ export default function Upload({setIsLoading}) {
         music
         ?
         <S.PlayerDiv>
-          <S.MusicPlayer controls src={`${target}music/${musicTitle}.wav`}/>
+          <S.MusicPlayer controls src={`${HOME}music/${musicTitle}.wav`}/>
         </S.PlayerDiv>
         :
         <S.UploadDiv onClick={handleButtonClick}>
