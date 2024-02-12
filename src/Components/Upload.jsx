@@ -7,6 +7,7 @@ export default function Upload({setIsLoading}) {
   const [music, setMusic] = useState(false);
   const [musicTitle, setMusicTitle] = useState("");
   const target = process.env.targetHome;
+  console.log(target);
 
   const handleButtonClick = () => {
     document.getElementById("fileInput").click();
