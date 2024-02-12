@@ -14,6 +14,7 @@ export default function Upload({setIsLoading}) {
   }
 
   const inputEvent = (e) => {
+    e.preventDefault();
     const file = e.target.files[0];
     setSelectedFile(file);
   }
@@ -62,13 +63,15 @@ export default function Upload({setIsLoading}) {
     <>
 
       <h1>악보 재생기</h1>
-      <input 
-        type="file" 
-        accept="image/*" 
-        id="fileInput" 
-        style={{visibility: "hidden"}}
-        onChange={inputEvent}
-      />
+      <label htmlFor="fileInput">
+        <input 
+          type="file" 
+          accept="image/*" 
+          id="fileInput" 
+          style={{visibility: "hidden"}}
+          onChange={inputEvent}
+        />
+      </label>
       {
         music
         ?
@@ -81,8 +84,8 @@ export default function Upload({setIsLoading}) {
             <S.HorizontalLine />
             <S.VaticalLine />
           </S.UploadButton>
-          <h3 style={{marginBottom: "0px"}}>악보 이미지를 업로드하세요</h3>
-          <h3 style={{marginBottom: "10px", marginTop: "0px"}}>해당 악보을 음악파일로 변환해 재생할 수 있습니다.</h3>
+          <h3 style={{marginBottom: "0px"}}>악보사진을 업로드하고</h3>
+          <h3 style={{marginBottom: "10px", marginTop: "0px"}}>재생해 보세요!</h3>
           <p style={{color: "red", margin: "0"}}>변환까지 1~2분 정도 소요됩니다</p>
         </S.UploadDiv>
       }
