@@ -20,7 +20,6 @@ export default function Upload({setIsLoading}) {
 
   useEffect(() => {
     const response = axios.post(`${HOME}delete`);
-    console.log(response.data);
   }, [])
 
   useEffect(() => {
