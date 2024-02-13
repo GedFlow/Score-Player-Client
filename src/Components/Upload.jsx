@@ -7,7 +7,6 @@ export default function Upload({setIsLoading}) {
   const [music, setMusic] = useState(false);
   const [musicTitle, setMusicTitle] = useState("");
   const HOME = process.env.REACT_APP_HOME.replaceAll('"', "");
-  console.log(HOME);
 
   const handleButtonClick = () => {
     document.getElementById("fileInput").click();
