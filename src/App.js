@@ -21,6 +21,7 @@ let LoadingDiv = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
+  z-index: 100;
 `
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
     <>
       {isLoading ? <LoadingDiv>로딩중</LoadingDiv> : null}
       <MainDiv>
-        {!isLoading ? <Upload setIsLoading={setIsLoading} /> : null}
+        <Upload isLoading={isLoading} setIsLoading={setIsLoading} />
       </MainDiv>
       <Footer />
     </>

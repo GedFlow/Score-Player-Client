@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import * as S from "./UploadStyle.js"
 
-export default function Upload({setIsLoading}) {
+export default function Upload({isLoading, setIsLoading}) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [music, setMusic] = useState(false);
   const [musicTitle, setMusicTitle] = useState("");
@@ -28,7 +28,6 @@ export default function Upload({setIsLoading}) {
           console.log("서버가 비활성화 상태입니다. 나중에 다시 시도하십시오.");
         } else {
           console.log("서버가 비활성화 상태입니다. 나중에 다시 시도하십시오.");
-
         }
       })
   }, [])

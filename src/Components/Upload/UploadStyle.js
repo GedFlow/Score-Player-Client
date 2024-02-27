@@ -47,6 +47,7 @@ export let UploadButton = styled.div`
   border: 1px solid black;
   border-radius: 10px;
   background-color: #6fadcf;
+  z-index: 1;
 `
 
 export let HorizontalLine = styled.div`
