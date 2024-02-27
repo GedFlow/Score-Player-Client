@@ -19,7 +19,18 @@ export default function Upload({setIsLoading}) {
   }
 
   useEffect(() => {
-    const response = axios.post(`${HOME}delete`);
+    axios.post(`${HOME}delete`)
+      .then(response => {
+        console.log("서버 연결에 성공했습니다.");
+      })
+      .catch(error => {
+        if(error) {
+          console.log("서버가 비활성화 상태입니다. 나중에 다시 시도하십시오.");
+        } else {
+          console.log("서버가 비활성화 상태입니다. 나중에 다시 시도하십시오.");
+
+        }
+      })
   }, [])
 
   useEffect(() => {
@@ -50,7 +61,7 @@ export default function Upload({setIsLoading}) {
   }, [selectedFile]);
   
   useEffect(() => {
-    console.log(musicTitle);
+    // console.log(musicTitle);
     if(musicTitle) {
       setMusic(true);
       setIsLoading(false);

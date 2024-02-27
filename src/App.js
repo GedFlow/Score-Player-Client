@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import Footer from "./Components/Footer";
-import Upload from "./Components/Upload";
+import Footer from "./Components/Footer/Footer.jsx";
+import Upload from "./Components/Upload/Upload.jsx";
 
 let MainDiv = styled.div`
   display: flex;

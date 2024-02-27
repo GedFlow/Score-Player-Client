@@ -24,3 +24,4 @@ yarn-error.log*
 
 music
 .env
+config.js
